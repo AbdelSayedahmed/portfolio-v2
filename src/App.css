@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&display=swap");
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Font */
+body {
+  font-family: "Bitter", serif;
+}
+
+/* Gradient Animation */
+.animated-bg {
+  background: linear-gradient(-45deg, #ff7eb9, #ff65a3, #7afcff, #feff9c);
+  background-size: 400% 400%;
+  animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Link Hover Animation */
+.nav-link {
+  @apply relative px-[10px] py-[5px] font-bold transition-all duration-300;
+}
+.nav-link::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300;
+}
+.nav-link:hover::after {
+  @apply w-full;
+}
